@@ -7,12 +7,12 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
+  nitro: {
+    output: { dir: "dist" },
+  },
   tanstackStart: {
     // GitHub Pages no ejecuta un servidor: Nitro debe generar solo archivos estáticos.
-    server: {
-      preset: "static",
-      output: { dir: "dist" },
-    },
+    server: { preset: "static" },
     // GitHub Pages solo sirve archivos estáticos: generamos cada ruta pública al construir.
     prerender: {
       enabled: true,
