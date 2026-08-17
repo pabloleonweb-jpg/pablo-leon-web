@@ -1,0 +1,15 @@
+{
+  "name": "Pablo León Studio",
+  "short_name": "Pablo León",
+  "icons": [
+    {
+      "src": "/logo-pablo-leon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "theme_color": "#10001f",
+  "background_color": "#10001f",
+  "display": "standalone"
+}
