@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from "react";
+import { type ReactNode } from "react";
 
 import { email, instagramHandle, instagramUrl } from "@/lib/site-content";
 
@@ -22,21 +22,19 @@ export function Header({ name }: { name: string }) {
 }
 
 export function ContactForm() {
-  const [sent, setSent] = useState(false);
   return (
     <form
       className="form"
-      onSubmit={(e) => {
-        e.preventDefault();
-        setSent(true);
-        alert("Gracias por contactar. Responderemos lo antes posible.");
-      }}
+      action="https://formsubmit.co/pabloleonweb@gmail.com"
+      method="POST"
     >
-      <input placeholder="Nombre" aria-label="Nombre" required />
-      <input type="email" placeholder="Email" aria-label="Email" required />
-      <textarea rows={4} placeholder="Mensaje" aria-label="Mensaje" required />
+      <input type="hidden" name="_subject" value="Nueva solicitud desde pabloleonstudio.es" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input name="nombre" placeholder="Nombre" aria-label="Nombre" required />
+      <input name="email" type="email" placeholder="Email" aria-label="Email" required />
+      <textarea name="mensaje" rows={4} placeholder="Mensaje" aria-label="Mensaje" required />
       <button type="submit" className="btn-violet">
-        {sent ? "Mensaje enviado ✓" : "Enviar mensaje ↗"}
+        Enviar mensaje ↗
       </button>
     </form>
   );
