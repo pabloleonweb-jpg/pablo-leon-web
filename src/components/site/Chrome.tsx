@@ -95,9 +95,9 @@ export function Footer({ onCookieSettings }: { onCookieSettings?: () => void }) 
     <footer className="site-footer">
       <span>© {new Date().getFullYear()} Pablo León Studio. Todos los derechos reservados.</span>
       <nav>
-        <a href="/aviso-legal">Aviso legal</a>
-        <a href="/politica-de-privacidad">Política de privacidad</a>
-        <a href="/politica-de-cookies">Política de cookies</a>
+        <a href="/aviso-legal/">Aviso legal</a>
+        <a href="/politica-de-privacidad/">Política de privacidad</a>
+        <a href="/politica-de-cookies/">Política de cookies</a>
         {onCookieSettings && (
           <button
             onClick={onCookieSettings}

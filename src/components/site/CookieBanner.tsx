@@ -159,7 +159,7 @@ export default function CookieBanner({
     <div className="cookie-bar" role="region" aria-label="Consentimiento de cookies">
       <p>
         Usamos cookies necesarias y, con tu permiso, Google Analytics para medir el uso de la web. Puedes aceptar o rechazar con la misma facilidad. Consulta la{" "}
-        <a href="/politica-de-cookies">política de cookies</a>.
+        <a href="/politica-de-cookies/">política de cookies</a>.
       </p>
       <div className="cookie-actions">
         <button className="btn-violet" onClick={() => commit(true, true)}>
