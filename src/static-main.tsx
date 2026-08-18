@@ -1,7 +1,10 @@
 import { createRoot } from "react-dom/client";
-import { Home } from "./routes/index";
+import { RouterProvider } from "@tanstack/react-router";
+import { getRouter } from "./router";
 import "./styles.css";
 
+const router = getRouter();
+
 createRoot(document.getElementById("root")!).render(
-  <Home />,
+  <RouterProvider router={router} />,
 );
