@@ -1,14 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { lazy, Suspense, useState } from "react";
+import { useState } from "react";
 
 import { Contact, Footer, Header, RequestModal } from "@/components/site/Chrome";
 import CookieBanner from "@/components/site/CookieBanner";
 import CursorTrail from "@/components/site/CursorTrail";
 import SavingsDashboard from "@/components/site/SavingsDashboard";
 import { automation, plans, reasons, sectors, services, steps } from "@/lib/site-content";
-import { useHydrated } from "@/lib/use-device";
-
-const NodeField = lazy(() => import("@/components/site/NodeField"));
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -114,7 +111,6 @@ function TrackPanel({ track, setPlan }: { track: Track; setPlan: (p: string) => 
 }
 
 function Home() {
-  const hydrated = useHydrated();
   const [track, setTrack] = useState<Track>("web");
   const [plan, setPlan] = useState<string | null>(null);
   const [cookieSettings, setCookieSettings] = useState(false);
@@ -127,13 +123,7 @@ function Home() {
   return (
     <div className="site" id="inicio">
       <CursorTrail />
-      <div className="bg-layer" aria-hidden="true">
-        {hydrated && (
-          <Suspense fallback={null}>
-            <NodeField />
-          </Suspense>
-        )}
-      </div>
+      <div className="bg-layer" aria-hidden="true" />
 
       <Header name="01 / DIGITAL SYSTEMS" />
 
