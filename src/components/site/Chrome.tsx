@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
 
 import { email, instagramHandle, instagramUrl } from "@/lib/site-content";
@@ -9,9 +8,9 @@ const whatsappQr = `https://api.qrserver.com/v1/create-qr-code/?size=240x240&for
 export function Header({ name }: { name: string }) {
   return (
     <header className="top">
-      <Link to="/" className="mark">
+      <a href="/" className="mark">
         PABLO LEÓN <i>STUDIO</i>
-      </Link>
+      </a>
       <span>{name}</span>
       <nav>
         <a href="/#servicios">Servicios</a>
@@ -96,9 +95,9 @@ export function Footer({ onCookieSettings }: { onCookieSettings?: () => void }) 
     <footer className="site-footer">
       <span>© {new Date().getFullYear()} Pablo León Studio. Todos los derechos reservados.</span>
       <nav>
-        <Link to="/aviso-legal">Aviso legal</Link>
-        <Link to="/politica-de-privacidad">Política de privacidad</Link>
-        <Link to="/politica-de-cookies">Política de cookies</Link>
+        <a href="/aviso-legal">Aviso legal</a>
+        <a href="/politica-de-privacidad">Política de privacidad</a>
+        <a href="/politica-de-cookies">Política de cookies</a>
         {onCookieSettings && (
           <button
             onClick={onCookieSettings}
