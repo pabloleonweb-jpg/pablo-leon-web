@@ -110,7 +110,7 @@ function TrackPanel({ track, setPlan }: { track: Track; setPlan: (p: string) => 
   );
 }
 
-function Home() {
+export function Home() {
   const [track, setTrack] = useState<Track>("web");
   const [plan, setPlan] = useState<string | null>(null);
   const [cookieSettings, setCookieSettings] = useState(false);
